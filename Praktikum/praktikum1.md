@@ -4,7 +4,7 @@
 <br>
 instalasi composer sudah dilakukan sebelumnya, cek apakah composer sudah berjalan.
 ![Screenshot mongodb](../Screenshot1/1_composer.png)
-
+<br>
 ### instalasi mongodb
 install mongodb dari halaman https://www.mongodb.com/try/download/community 
 ![Screenshot mongodb](../Screenshot1/2_mongodb.png)
@@ -30,7 +30,7 @@ buka direktori tempat lumen akan diinstall
 <br>
 
 masuk ke terminal dan buka folder tempat lumen akan diinstall, lalu ketikkan composer create-project --prefer-dist laravel/lumen lumenapi 
-![Screenshot mongodb](../Screenshot1/9.png)
+![Screenshot mongodb](../Screenshot1/9.png) 
 
 <br>
 untuk menjalankan server, ketikkan php -S localhost:8000 -t public pada terminal visual studio code
@@ -50,4 +50,4 @@ tambahkan "/key" untuk melakukan generate app key
 
 <br>
 copy key tersebut ke file .env pada projek lumenapi
-![Screenshot](../Screenshot1/14_envappkey.png)
+![Screenshot](../Screenshot1/14_envappkey.png) 
