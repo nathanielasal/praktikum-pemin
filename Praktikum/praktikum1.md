@@ -1,10 +1,8 @@
 # Praktikum 1 : Instalasi Lumen, MongoDB, dan Konfirgurasi App Key
 
 ### composer 
-<br>
 instalasi composer sudah dilakukan sebelumnya, cek apakah composer sudah berjalan.
-![Screenshot mongodb](../Screenshot1/1_composer.png)
-<br>
+![Screenshot mongodb](../Screenshot1/1_composer.png) 
 ### instalasi mongodb
 install mongodb dari halaman https://www.mongodb.com/try/download/community 
 ![Screenshot mongodb](../Screenshot1/2_mongodb.png)
@@ -28,18 +26,14 @@ setelah instalasi berhasil, mongodb compass akan muncul
 buka direktori tempat lumen akan diinstall
 ![Screenshot mongodb](../Screenshot1/8.png)
 <br>
-
 masuk ke terminal dan buka folder tempat lumen akan diinstall, lalu ketikkan composer create-project --prefer-dist laravel/lumen lumenapi 
 ![Screenshot mongodb](../Screenshot1/9.png) 
-
 <br>
 untuk menjalankan server, ketikkan php -S localhost:8000 -t public pada terminal visual studio code
 ![Screenshot mongodb](../Screenshot1/10.png)
-
 <br>
 Buka file web.php pada folder routes, kemudian buat endpoint yang akan mengembalikan random string dengan panjang 32
 ![Screenshot](../Screenshot1/11.png)
-
 <br>
 buka "localhost:8000" pada browser untuk mnengecek apakah lumen sudah terinstall
 ![Screenshot](../Screenshot1/12_localhost8000.png)
