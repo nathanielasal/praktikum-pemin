@@ -38,11 +38,9 @@ Buka file web.php pada folder routes, kemudian buat endpoint yang akan mengembal
 <br>
 buka "localhost:8000" pada browser untuk mnengecek apakah lumen sudah terinstall
 ![Screenshot](../Screenshot1/12_localhost8000.png)
-
 <br>
 tambahkan "/key" untuk melakukan generate app key
 ![Screenshot](../Screenshot1/13_appkey.png)
-
 <br>
 copy key tersebut ke file .env pada projek lumenapi
 ![Screenshot](../Screenshot1/14_envappkey.png) 
