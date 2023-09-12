@@ -38,16 +38,16 @@ untuk menjalankan server, ketikkan php -S localhost:8000 -t public pada terminal
 
 <br>
 Buka file web.php pada folder routes, kemudian buat endpoint yang akan mengembalikan random string dengan panjang 32
-![Screenshot mongodb](../Screenshot1/11.png)
+![Screenshot](../Screenshot1/11.png)
 
 <br>
 buka "localhost:8000" pada browser untuk mnengecek apakah lumen sudah terinstall
-![Screenshot mongodb](../Screenshot1/12_localhost8000.png)
+![Screenshot](../Screenshot1/12_localhost8000.png)
 
 <br>
 tambahkan "/key" untuk melakukan generate app key
-![Screenshot mongodb](../Screenshot1/13_appkey.png)
+![Screenshot](../Screenshot1/13_appkey.png)
 
 <br>
 copy key tersebut ke file .env pada projek lumenapi
-![Screenshot mongodb](../Screenshot1/14_envappkey.png)
+![Screenshot](../Screenshot1/14_envappkey.png)
