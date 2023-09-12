@@ -3,7 +3,7 @@
 ### composer 
 <br>
 instalasi composer sudah dilakukan sebelumnya, cek apakah composer sudah berjalan.
-![Screenshot composer](../Screenshot1/1_composer.png)
+![Screenshot mongodb](../Screenshot1/1_composer.png)
 
 ### instalasi mongodb
 install mongodb dari halaman https://www.mongodb.com/try/download/community 
