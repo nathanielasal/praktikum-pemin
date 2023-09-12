@@ -33,7 +33,7 @@ masuk ke terminal dan buka folder tempat lumen akan diinstall, lalu ketikkan com
 ![Screenshot mongodb](../Screenshot1/9.png)
 
 <br>
-untuk menjalankan server, ketikkan php -S localhost:8000 -t public pada terminal
+untuk menjalankan server, ketikkan ```php -S localhost:8000 -t public``` pada terminal visual studio code
 ![Screenshot mongodb](../Screenshot1/10.png)
 
 <br>
