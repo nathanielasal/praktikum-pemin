@@ -1,4 +1,5 @@
-### composer
+### composer 
+<br>
 instalasi composer sudah dilakukan sebelumnya, cek apakah composer sudah berjalan.
 ![Screenshot composer](../Screenshot1/1_composer.png)
 
@@ -16,8 +17,12 @@ install mongodb dari halaman https://www.mongodb.com/try/download/community
 
 ![Screenshot mongodb](../Screenshot1/7_mongodb.png)
 
+### lumen dan konfigurasi app key
+buka direktori tempat lumen akan diinstall
 ![Screenshot mongodb](../Screenshot1/8.png)
+<br>
 
+masuk ke terminal dan buka fol
 ![Screenshot mongodb](../Screenshot1/9.png)
 
 ![Screenshot mongodb](../Screenshot1/10.png)
