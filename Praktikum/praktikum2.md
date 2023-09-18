@@ -14,14 +14,13 @@
   d. Lakukan insert buku kedua dengan cara yang sama <br>
       ![Screenshot](../Screenshot2/5.png) <br>
   e. Proses READ dilakukan dengan cara mencari buku dengan author "Osamu Dazai" dengan mengisi filter yang diinginkan dan klik "Find" <br>
+  ![Screenshot](../Screenshot2/6.png) <br>
    ![Screenshot](../Screenshot2/7.png) <br>
-     ![Screenshot read](../Laprak2/7.PNG) <br>
-     ![Screenshot read](../Laprak2/8.PNG) <br>
   f. Sedangkan untuk proses UPDATE, dilakukan perubahan summary pada buku "No Longer Human" menjadi "Buku yang bagus (NAMA,NIM) dengan melakukan klik "Edit Document" (berlambang pensil), mengisi nilai summary yang baru, dan melakukan klik "Update" <br>
-     ![Screenshot update](../Laprak2/9.PNG) <br>
-     ![Screenshot update](../Laprak2/10.PNG) <br>
+  ![Screenshot](../Screenshot2/8.png) <br>
+     ![Screenshot](../Screenshot2/9.png) <br>
   g. Proses DELETE, dilakukan dengan cara penghapusan pada buku "I Am a Cat" dengan melakukan klik "Remove Document" (berlambang tong sampah) dan melakukan klik "Delete" <br>
-     ![Screenshot delete](../Laprak2/11.PNG) <br>
+     ![Screenshot](../Screenshot2/10.png) <br> <br>
      
 * ## MongoDB Shell
   MongoDB Shell merupakan tool untuk melakukan aktivitas CRUD yang berbasis Command Line Interface (CLI). MongoDB Shell dapat diakses langsung dari MongoDB Compass atau menggunakan perintah mongosh pada Command Prompt. Berikut adalah langkah-langkah untuk melakukan CRUD pada MongoDB Shell: <br>
