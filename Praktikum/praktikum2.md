@@ -11,9 +11,9 @@
   c. Pada percobaan ini, proses CREATE dilakukan dengan insert buku pertama dengan melakukan klik "Add Data", pilih "Insert Document", <br>
      ![Screenshot](../Screenshot2/4.png) <br>
   isi dengan data yang diinginkan dan klik "Next" <br>
-     ![Screenshot create](../Laprak2/5.PNG) <br>
+     ![Screenshot](../Screenshot2/5.png) <br>
   d. Lakukan insert buku kedua dengan cara yang sama <br>
-     ![Screenshot create](../Laprak2/6.PNG) <br>
+     ![Screenshot](../Screenshot2/7.png) <br>
   e. Proses READ dilakukan dengan cara mencari buku dengan author "Osamu Dazai" dengan mengisi filter yang diinginkan dan klik "Find" <br>
      ![Screenshot read](../Laprak2/7.PNG) <br>
      ![Screenshot read](../Laprak2/8.PNG) <br>
