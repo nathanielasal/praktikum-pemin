@@ -3,13 +3,13 @@
 * ## MongoDB Compass
   MongoDB Compass adalah tool berbasis Graphical User Interface (GUI) yang digunakan untuk melakukan aktivitas dasar CREATE, READ, UPDATE, dan DELETE (CRUD) tanpa commad line pada MongoDB. Berikut adalah langkah-langkah untuk melakukan CRUD pada MongoDB Compass: <br>
   a. Lakukan koneksi ke MongoDB menggunakan connection string <br>
-     ![Screenshot connection](../Laprak2/1.PNG) <br>
+     ![Screenshot](../Screenshot2/1.png) <br>
   b. Buat database baru dengan menekan tanda plus "+", maka MongoDB Compass akan menampilkan input form seperti di bawah <br>
-     ![Screenshot new database](../Laprak2/2.PNG) <br>
+     ![Screenshot](../Screenshot2/2.png) <br>
   c. Isi informasi yang ada dan klik "Create Database". Database baru akan dibuat oleh MongoDB Compass <br>
-     ![Screenshot new database](../Laprak2/3.PNG) <br>
+     ![Screenshot](../Screenshot2/3.png) <br>
   c. Pada percobaan ini, proses CREATE dilakukan dengan insert buku pertama dengan melakukan klik "Add Data", pilih "Insert Document", <br>
-     ![Screenshot create](../Laprak2/4.PNG) <br>
+     ![Screenshot](../Screenshot2/4.png) <br>
   isi dengan data yang diinginkan dan klik "Next" <br>
      ![Screenshot create](../Laprak2/5.PNG) <br>
   d. Lakukan insert buku kedua dengan cara yang sama <br>
