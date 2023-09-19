@@ -32,7 +32,7 @@
     Untuk berpindah ke database "bookstore" gunakan command ```use bookstore``` dan memastikan database telah berpindah dengan melihat tulisan sebelum tanda ">" <br>
      ![Screenshot](../Screenshot2/14.png) <br> <br>
   Untuk melihat collection yang ada pada database tersebut gunakan command ```show collection``` <br>
-    
+     ![Screenshot](../Screenshot2/27.png) <br> <br>
   c. Proses CREATE pada MongoDB Shell dapat dilakukan secara satu per satu atau langsung membuat banyak. Untuk membuat objek baru, dilakukan insert buku "Overlord I" dengan menggunakan command ```db.books.insertOne(data)``` <br>
      ![Screenshot](../Screenshot2/16.png) <br> <br>
   d. Sementara untuk membuat objek baru lebih dari satu, dilakukan insert buku "The Setting Sun" dan "Hujan" dengan insert many dengan menggunakan command ```db.books.insertMany(data)``` <br>
