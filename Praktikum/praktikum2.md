@@ -32,22 +32,23 @@
     Untuk berpindah ke database "bookstore" gunakan command ```use bookstore``` dan memastikan database telah berpindah dengan melihat tulisan sebelum tanda ">" <br>
      ![Screenshot](../Screenshot2/14.png) <br> <br>
   Untuk melihat collection yang ada pada database tersebut gunakan command ```show collection``` <br>
-     ![Screenshot](../Screenshot2/15.png) <br> <br>
+    
   c. Proses CREATE pada MongoDB Shell dapat dilakukan secara satu per satu atau langsung membuat banyak. Untuk membuat objek baru, dilakukan insert buku "Overlord I" dengan menggunakan command ```db.books.insertOne(data)``` <br>
      ![Screenshot](../Screenshot2/16.png) <br> <br>
   d. Sementara untuk membuat objek baru lebih dari satu, dilakukan insert buku "The Setting Sun" dan "Hujan" dengan insert many dengan menggunakan command ```db.books.insertMany(data)``` <br>
      ![Screenshot](../Screenshot2/17.png) <br> <br>
+      ![Screenshot](../Screenshot2/18.png) <br> <br>
   e. Aktivitas READ, dilakukan dengan pencarian buku dengan menggunakan command ```db.books.find()``` untuk melakukan pencarian semua buku <br>
-     ![Screenshot](../Screenshot2/18.png) <br> <br>
-  f. Tampilkan seluruh buku dengan author "Osamu Dazai" dengan mengisi argument pada find() dengan menggunakan command ```db.books.find({filter})``` <br>
      ![Screenshot](../Screenshot2/19.png) <br> <br>
-  g. Proses UPDATE dapat dilakukan dengan melakukan perubahan summary pada buku "Hujan" menjadi "Buku yang bagus (NAMA, NIM) dengan menggunakan command ```db.books.updateOne({filter}, {$set: {data yang ingin diupdate}})``` <br>
+  f. Tampilkan seluruh buku dengan author "Osamu Dazai" dengan mengisi argument pada find() dengan menggunakan command ```db.books.find({filter})``` <br>
      ![Screenshot](../Screenshot2/20.png) <br> <br>
+  g. Proses UPDATE dapat dilakukan dengan melakukan perubahan summary pada buku "Hujan" menjadi "Buku yang bagus (NAMA, NIM) dengan menggunakan command ```db.books.updateOne({filter}, {$set: {data yang ingin diupdate}})``` <br>
+      ![Screenshot](../Screenshot2/22.png) <br> <br>
   h. Lakukan perubahan publisher menjadi "Yen Press" pada semua buku "Osamu Dazai" dengan menggunakan command ```db.books.updateMany({filter}, {$set: {data yang ingin diupdate}})``` <br>
-     ![Screenshot](../Screenshot2/21.png) <br> <br>
+   ![Screenshot](../Screenshot2/23.png) <br> <br>
   i. Proses DELETE, dilakukan dengan penghapusan pada buku "Overlord I" dengan menggunakan command ```db.books.deleteOne({argument})``` <br>
-     ![Screenshot](../Screenshot2/22.png) <br> <br>
-  j. Lakukan penghapusan pada semua buku "Osamu Dazai" dengan menggunakan command ```db.books.deleteMany({argument})``` <br>
-     ![Screenshot](../Screenshot2/23.png) <br> <br>
-Untuk melihat hasil dari proses CRUD di atas, dapat dilakukan pencarian seluruh buku menggunakan command ```db.books.find()```
      ![Screenshot](../Screenshot2/24.png) <br> <br>
+  j. Lakukan penghapusan pada semua buku "Osamu Dazai" dengan menggunakan command ```db.books.deleteMany({argument})``` <br>
+       ![Screenshot](../Screenshot2/25.png) <br> <br>
+Untuk melihat hasil dari proses CRUD di atas, dapat dilakukan pencarian seluruh buku menggunakan command ```db.books.find()```
+     ![Screenshot](../Screenshot2/26.png) <br> <br>
