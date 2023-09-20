@@ -1,6 +1,5 @@
-# Instalasi MongoDB dan Express
-<br>
-### Percobaan Instalasi NodeJS  
+# Instalasi MongoDB dan Express <br>
+### Percobaan Instalasi NodeJ
 <br>
 1. Setelah instalasi selesai jalankan command node -v untuk memeriksa apakah NodeJS sudah terinstall <br>
 
