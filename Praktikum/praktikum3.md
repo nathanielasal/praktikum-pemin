@@ -14,14 +14,11 @@
 
    ### Koneksi Express ke MongoDB
    1. Buatlah file index.js pada root folder dan masukkan kode di bawah ini <br>
-   ![Screenshot](../Screenshot3/4_indexjs.png)
-   <br> 
+   ![Screenshot](../Screenshot3/4_indexjs.png) <br> 
    2. Setelah itu coba jalankan aplikasi dengan command node index.js <br>
-    ![Screenshot](../Screenshot3/5_node.png)
-    <br>
+    ![Screenshot](../Screenshot3/5_node.png) <br>
    3. Lakukan pembuatan file .env dan masukkan baris berikut. Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi kembali <br>
-   ![Screenshot](../Screenshot3/6_env.png)
-  <br>
+   ![Screenshot](../Screenshot3/6_env.png) <br>
    4. Copy connection string yang terdapat pada compas atau atlas dan paste kan pada .env seperti berikut <br>
     ![Screenshot](../Screenshot3/7_mongoconnect.png) <br>
    5. Tambahkan baris kode berikut pada file index.js. Setelah itu coba jalankan aplikasi kembali. <br>
