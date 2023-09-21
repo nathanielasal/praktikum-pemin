@@ -1,21 +1,28 @@
 # Instalasi MongoDB dan Express <br>
 ### Percobaan Instalasi NodeJS
-<br>
-1. Setelah instalasi selesai jalankan command node -v untuk memeriksa apakah NodeJS sudah terinstall <br>
 
+1. Setelah instalasi selesai jalankan command node -v untuk memeriksa apakah NodeJS sudah terinstall <br>
+  ![Screenshot](../Screenshot3/1_node_v.png) <br>
 ### Inisiasi project Express dan pemasangan package
-<br>
 1. Lakukan pembuatan folder dengan nama express-mongodb dan masuk ke dalam folder tersebut lalu buka melalui text editor masing-masing <br>
+
 2. Lakukan npm init untuk mengenerate file package.json dengan menggunakan command npm init -y <br>
+ ![Screenshot](../Screenshot3/2_npm_init-y.png) <br>
 3. Lakukan instalasi express, mongose, dan dotenv dengan menggunakan command npm i express mongose dotenv <br>
+ ![Screenshot](../Screenshot3/3_npm_express.png) <br>
 
    ### Koneksi Express ke MongoDB
 <br>
    1. Buatlah file index.js pada root folder dan masukkan kode di bawah ini <br>
+    ![Screenshot](../Screenshot3/4_index js.png) <br> 
    2. Setelah itu coba jalankan aplikasi dengan command node index.js <br>
+    ![Screenshot](../Screenshot3/5_node index js 8000.png) <br>
    3. Lakukan pembuatan file .env dan masukkan baris berikut. Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi kembali <br>
+    ![Screenshot](../Screenshot3/6_env.png) <br>
    4. Copy connection string yang terdapat pada compas atau atlas dan paste kan pada .env seperti berikut <br>
+    ![Screenshot](../Screenshot3/7_mongoconnect.png) <br>
    5. Tambahkan baris kode berikut pada file index.js. Setelah itu coba jalankan aplikasi kembali. <br>
+    ![Screenshot](../Screenshot3/8_mongodb connect.png) <br>
 
    ### Pembuatan routing
    <br>
