@@ -74,7 +74,7 @@
    7. Tampilkan semua buku dengan Postman <br>
     ![Screenshot](../Screenshot3/18_postman_getall.png) <br>
    8. Tampilkan buku Dilan 1990 dengan Postman <br>
-
+    ![Screenshot](../Screenshot3/23_getbooksdilan.png) <br>
    9. Lakukan perubahan pada fungsi updateBook <br>
     ![Screenshot](../Screenshot3/19_updatebook.png) <br>
    10. Ubah judul buku Dilan 1991 menjadi “<NAMA PANGGILAN> 1991” dengan Postman <br>
