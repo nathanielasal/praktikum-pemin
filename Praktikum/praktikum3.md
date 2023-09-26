@@ -28,6 +28,7 @@ const PORT = 8000;
 app.listen(PORT, () => {
 console.log(`Running on port ${PORT}`);
 })``
+<br>
    ![Screenshot](../Screenshot3/4_indexjs.png) <br> 
    2. Setelah itu coba jalankan aplikasi dengan command node index.js <br>
     ![Screenshot](../Screenshot3/5_node.png) <br>
