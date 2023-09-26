@@ -13,21 +13,21 @@
  ![Screenshot](../Screenshot3/3_npm_express.png) <br>
 
    ### Koneksi Express ke MongoDB
-   1. Buatlah file index.js pada root folder dan masukkan kode di bawah ini <br>
-  ` require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const app = express();
-app.use(express.json());
-app.get('/', (req, res) => {
-res.status(200).json({
-message: '<nama>,<nim>'
-})
-})
-const PORT = 8000;
-app.listen(PORT, () => {
-console.log(`Running on port ${PORT}`);
-})`
+   1. Buatlah file index.js pada root folder dan masukkan kode di bawah ini <br><br>
+  ` require('dotenv').config(); <br>
+const express = require('express'); <br>
+const mongoose = require('mongoose'); <br>
+const app = express(); <br>
+app.use(express.json()); <br>
+app.get('/', (req, res) => { <br>
+res.status(200).json({ <br>
+message: '<nama>,<nim>' <br>
+}) <br>
+}) <br>
+const PORT = 8000; <br>
+app.listen(PORT, () => { <br>
+console.log(`Running on port ${PORT}`); <br>
+})` <br>
    ![Screenshot](../Screenshot3/4_indexjs.png) <br> 
    2. Setelah itu coba jalankan aplikasi dengan command node index.js <br>
     ![Screenshot](../Screenshot3/5_node.png) <br>
