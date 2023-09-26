@@ -13,7 +13,7 @@
  ![Screenshot](../Screenshot3/3_npm_express.png) <br>
 
    ### Koneksi Express ke MongoDB
-   1. Buatlah file index.js pada root folder dan masukkan kode di bawah ini <br>
+1. Buatlah file index.js pada root folder dan masukkan kode di bawah ini <br>
 ` require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -29,9 +29,9 @@ app.listen(PORT, () => {
 console.log(`Running on port ${PORT}`);
 })`
    ![Screenshot](../Screenshot3/4_indexjs.png) <br> 
-   2. Setelah itu coba jalankan aplikasi dengan command `node index.js` <br>
+2. Setelah itu coba jalankan aplikasi dengan command `node index.js` <br>
     ![Screenshot](../Screenshot3/5_node.png) <br>
-   3. Lakukan pembuatan file .env dan masukkan baris berikut. Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi kembali <br>
+3. Lakukan pembuatan file .env dan masukkan baris berikut. Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi kembali <br>
   ` const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
 console.log(`Running on port ${PORT}`);
@@ -183,11 +183,11 @@ module.exports = router;`
 
 
    ### Pembuatan model
-   1. Lakukan pembuatan direktori models di tingkat yang sama dengan index.js <br>
+1. Lakukan pembuatan direktori models di tingkat yang sama dengan index.js <br>
    ![Screenshot](../Screenshot3/1_11_modelfolder.png) <br>
-   2. Buatlah file book.model.js di dalamnya <br>
+2. Buatlah file book.model.js di dalamnya <br>
     ![Screenshot](../Screenshot3/1_11_modelfolder.png) <br>
-   3. Tambahkan baris kode berikut sesuai dengan tabel di atas <br>
+3. Tambahkan baris kode berikut sesuai dengan tabel di atas <br>
   ` const mongoose = require('mongoose');
 const bookSchema = new mongoose.Schema({
 title: {
@@ -213,12 +213,12 @@ module.exports = mongoose.model('book', bookSchema);`
     ![Screenshot](../Screenshot3/1_12_bookmodeljs.png) <br>
 
    ### Operasi CRUD
-   1. Hapus semua data pada collection books <br>
+1. Hapus semua data pada collection books <br>
     ![Screenshot](../Screenshot3/12_deletecoll.png) <br>
-   2. Lakukan import book.model.js pada file book.controller.js <br>
+2. Lakukan import book.model.js pada file book.controller.js <br>
 `const Book = require('../models/book.model');`
     ![Screenshot](../Screenshot3/1_11_modelfolder.png) <br>
-   3. Lakukan perubahan pada fungsi createBook <br>
+3. Lakukan perubahan pada fungsi createBook <br>
    `const Book = require('../models/book.model');
 ...
 async function createBook(req, res) {
@@ -246,7 +246,7 @@ error: error.message,
 }
 }`
    ![Screenshot](../Screenshot3/13_createbook.png) <br>
-   4. Buatlah dua buah buku dengan data di bawah ini dengan Postman <br>
+4. Buatlah dua buah buku dengan data di bawah ini dengan Postman <br>
 `   {
 "title": "Dilan 1990",
 "author": "Pidi Baiq",
@@ -265,7 +265,7 @@ error: error.message,
 "publisher": "Pastel Books"
 }`
     ![Screenshot](../Screenshot3/14_bukubaru2.png) <br>
-   5. Lakukan perubahan pada fungsi getAllBooks <br>
+5. Lakukan perubahan pada fungsi getAllBooks <br>
 `   const Book = require('../models/book.model');
 async function getAllBooks(req, res) {
 try {
@@ -282,7 +282,7 @@ error: error.message,
 }
 }`
     ![Screenshot](../Screenshot3/17_getallbook.png) <br>
-   6. Lakukan perubahan pada fungsi getOneBook <br>
+6. Lakukan perubahan pada fungsi getOneBook <br>
 `   const Book = require('../models/book.model');
 ...
 async function getOneBook(req, res) {
@@ -301,11 +301,11 @@ error: error.message,
 }
 }`
     ![Screenshot](../Screenshot3/16_getonebook.png) <br>
-   7. Tampilkan semua buku dengan Postman <br>
+7. Tampilkan semua buku dengan Postman <br>
     ![Screenshot](../Screenshot3/18_postman_getall.png) <br>
-   8. Tampilkan buku Dilan 1990 dengan Postman <br>
+8. Tampilkan buku Dilan 1990 dengan Postman <br>
     ![Screenshot](../Screenshot3/23_getbooksdilan.png) <br>
-   9. Lakukan perubahan pada fungsi updateBook <br>
+9. Lakukan perubahan pada fungsi updateBook <br>
  `  const Book = require('../models/book.model');
 ...
 async function updateBook(req, res) {
@@ -326,9 +326,9 @@ error: error.message,
 }
 }`
     ![Screenshot](../Screenshot3/19_updatebook.png) <br>
-   10. Ubah judul buku Dilan 1991 menjadi “<NAMA PANGGILAN> 1991” dengan Postman <br>
+10. Ubah judul buku Dilan 1991 menjadi “<NAMA PANGGILAN> 1991” dengan Postman <br>
     ![Screenshot](../Screenshot3/20_postmanupdatebook.png) <br>
-  11. Lakukan perubahan pada fungsi deleteBook <br>
+11. Lakukan perubahan pada fungsi deleteBook <br>
 `  const Book = require('../models/book.model');
 ...
 async function deleteBook(req, res) {
@@ -347,7 +347,7 @@ error: error.message,
 }
 }`
    ![Screenshot](../Screenshot3/21_deletebook.png) <br>
-  12. Hapus buku Dilan 1990 dengan Postman 
+12. Hapus buku Dilan 1990 dengan Postman 
    ![Screenshot](../Screenshot3/22_postmandelete.png) <br>
    
 
