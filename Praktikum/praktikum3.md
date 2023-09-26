@@ -219,7 +219,7 @@ module.exports = mongoose.model('book', bookSchema);`
 `const Book = require('../models/book.model');`
     ![Screenshot](../Screenshot3/1_11_modelfolder.png) <br>
 3. Lakukan perubahan pada fungsi createBook <br>
-   `const Book = require('../models/book.model');
+   ``const Book = require('../models/book.model');
 ...
 async function createBook(req, res) {
 const book = new Book({
@@ -235,8 +235,6 @@ const savedBook = await book.save();
 res.status(200).json({
 message: 'membuat buku baru',
 book: savedBook,
-
-
 })
 } catch (error) {
 res.status(500).json({
@@ -244,7 +242,7 @@ message: 'kesalahan pada server',
 error: error.message,
 })
 }
-}`
+}``
    ![Screenshot](../Screenshot3/13_createbook.png) <br>
 4. Buatlah dua buah buku dengan data di bawah ini dengan Postman <br>
 `   {
