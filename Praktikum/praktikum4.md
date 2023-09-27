@@ -2,16 +2,19 @@
 1. GET <br>
 Untuk menambahkan endpoint dengan method GET pada aplikasi kita, kita dapat mengunjungi file web.php pada folder routes. Kemudian tambahkan baris ini pada akhir file <br>
 
-```...
+```
+...
 $router->get('/get', function () {
 return 'GET';
 });
 ```
 <br>
 Setelah itu coba jalankan aplikasi dengan command,<br>
+
 ```
 php -S localhost:8000 -t public
 ```
+
 <br>
 
 
@@ -92,7 +95,7 @@ $app->withEloquent();
 
 d. Setelah itu jalankan command berikut untuk membuat file migration, <br>
 ```php artisan make:migration create_users_table # membuat migrasi untuk tabel users
-php artisan make:migration create_products_table``` # membuat migrasi untuk tabel products
+php artisan make:migration create_products_table # membuat migrasi untuk tabel products
 ```
 <br>
 Setelah menjalankan 2 syntax diatas akan terbuat 2 file pada folder
