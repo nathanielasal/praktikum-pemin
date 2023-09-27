@@ -8,8 +8,8 @@ return 'GET';
 });`
 <br>
 Setelah itu coba jalankan aplikasi dengan command,<br>
-`php -S localhost:8000 -t public
-<br>```
+`php -S localhost:8000 -t public```
+<br>
 
 >[!NOTE]
 > Note: Pastikan buka cmd pada folder aplikasi<br>
