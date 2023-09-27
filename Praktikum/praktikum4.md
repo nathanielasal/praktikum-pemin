@@ -12,7 +12,7 @@ Setelah itu coba jalankan aplikasi dengan command,<br>
 <br>```
 
 >[!NOTE]
->Note: Pastikan buka cmd pada folder aplikasi<br>
+> Note: Pastikan buka cmd pada folder aplikasi<br>
 
 Setelah aplikasi berhasil dijalankan, kita dapat membuka browser dengan url,
 http://localhost:8000/get , path yang akan kita akses akan berbentuk demikian, <br>
