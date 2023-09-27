@@ -9,7 +9,9 @@ return 'GET';
 ```
 <br>
 Setelah itu coba jalankan aplikasi dengan command,<br>
-`php -S localhost:8000 -t public`
+```
+php -S localhost:8000 -t public
+```
 <br>
 
 
@@ -23,7 +25,8 @@ Sama halnya saat menambahkan method GET, kita dapat menambahkan methode
 POST, PUT, PATCH, DELETE, dan OPTIONS pada file web.php dengan code seperti
 ini, <br>
 
-```...
+```
+...
 $router->post('/post', function () {
 return 'POST';
 });
@@ -82,7 +85,8 @@ bootstrap dan mengubah baris ini, <br>
 <br>
 Menjadi, <br>
 
-```$app->withFacades();
+```
+$app->withFacades();
 $app->withEloquent();
 ```
 
@@ -109,7 +113,8 @@ $table->timestamps();
 ...
 ```
 diubah menjadi
-```...
+```
+...
 public function up()
 {
 Schema::create('users', function (Blueprint $table) {
@@ -138,7 +143,8 @@ $table->timestamps();
 ```
 
  diubah menjadi
-```...
+```
+...
 public function up()
 {
 Schema::create('products', function (Blueprint $table) {
@@ -157,5 +163,6 @@ $table->text('description');
 
 g. Kemudian jalankan command, <br>
 
-```php artisan migrate
+```
+php artisan migrate
 ```
