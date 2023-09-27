@@ -128,12 +128,12 @@ $table->timestamps();
 ...`
 
  diubah menjadi
-`...
+```...
 public function up()
 {
 Schema::create('products', function (Blueprint $table) {
 $table->id();
-$table->timestamps();
+$table->timestamps(); 
 $table->string('name');
 $table->integer('category_id');
 $table->string('slug');
@@ -142,7 +142,7 @@ $table->integer('weight');
 $table->text('description');
 });
 }
-...`
+...```
 
 g. Kemudian jalankan command, <br>
 
