@@ -73,25 +73,25 @@ beberapa library bawaan dari lumen dengan membuka file app.php pada folder
 bootstrap dan mengubah baris ini, <br>
 
 `//$app->withFacades();
-//$app->withEloquent();
+//$app->withEloquent();`
 <br>
 Menjadi, <br>
 
-$app->withFacades();
+`$app->withFacades();
 $app->withEloquent();`
 
 d. Setelah itu jalankan command berikut untuk membuat file migration, <br>
 php artisan make:migration create_users_table # membuat migrasi untuk tabel users
-php artisan make:migration create_products_table # membuat migrasi untuk tabel products <br>
+`php artisan make:migration create_products_table` # membuat migrasi untuk tabel products <br>
 Setelah menjalankan 2 syntax diatas akan terbuat 2 file pada folder
 database/migrations dengan format YYYY_MM_DD_HHmmss_nama_migrasi. Pada
 file migrasi kita akan menemukan fungsi up() dan fungsi down(), fungsi up() akan
 digunakan pada saat kita melakukan migrasi, fungsi down() akan digunakan saat
 kita ingin me-rollback migrasi <br>
 e. Ubah fungsi up pada file migrasi create_users_table <br>
-`
-# sebelumnya
-...
+
+sebelumnya
+`...
 public function up()
 {
 Schema::create('users', function (Blueprint $table) {
@@ -99,9 +99,9 @@ $table->id();
 $table->timestamps();
 });
 }
-...
-# diubah menjadi
-...
+...`
+diubah menjadi
+`...
 public function up()
 {
 Schema::create('users', function (Blueprint $table) {
@@ -112,11 +112,11 @@ $table->string('email');
 $table->string('password');
 });
 }
-...
-`
+...`
+
 f. Ubah fungsi up pada file migrasi create_products_table <br>
 `
-# sebelumnya
+ sebelumnya
 ...
 public function up()
 {
@@ -125,9 +125,10 @@ $table->id();
 $table->timestamps();
 });
 }
-...
-# diubah menjadi
-...
+...`
+
+ diubah menjadi
+`...
 public function up()
 {
 Schema::create('products', function (Blueprint $table) {
