@@ -6,13 +6,11 @@ Untuk menambahkan endpoint dengan method GET pada aplikasi kita, kita dapat meng
 $router->get('/get', function () {
 return 'GET';
 });`
-<br>
+<br>```
 Setelah itu coba jalankan aplikasi dengan command,<br>
-`php -S localhost:8000 -t public```
+```php -S localhost:8000 -t public```
 <br>
 
->[!NOTE]
-> Note: Pastikan buka cmd pada folder aplikasi<br>
 
 Setelah aplikasi berhasil dijalankan, kita dapat membuka browser dengan url,
 http://localhost:8000/get , path yang akan kita akses akan berbentuk demikian, <br>
