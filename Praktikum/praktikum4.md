@@ -9,8 +9,7 @@ return 'GET';
 ```
 <br>
 Setelah itu coba jalankan aplikasi dengan command,<br>
-```php -S localhost:8000 -t public
-```
+`php -S localhost:8000 -t public`
 <br>
 
 
