@@ -129,8 +129,7 @@ $table->string('password');
 ...
 ```
 
-f. Ubah fungsi up pada file migrasi create_products_table <br>
-sebelumnya
+f. Ubah fungsi up pada file migrasi create_products_table sebelumnya <br>
 ```
 ...
 public function up()
@@ -142,8 +141,7 @@ $table->timestamps();
 }
 ...
 ```
-
- diubah menjadi
+ diubah menjadi <br>
 ```
 ...
 public function up()
