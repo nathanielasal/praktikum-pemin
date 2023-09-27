@@ -5,8 +5,8 @@ Untuk menambahkan endpoint dengan method GET pada aplikasi kita, kita dapat meng
 ```...
 $router->get('/get', function () {
 return 'GET';
-});`
-<br>```
+});```
+<br>
 Setelah itu coba jalankan aplikasi dengan command,<br>
 ```php -S localhost:8000 -t public```
 <br>
@@ -81,7 +81,8 @@ $app->withEloquent();```
 
 d. Setelah itu jalankan command berikut untuk membuat file migration, <br>
 ```php artisan make:migration create_users_table # membuat migrasi untuk tabel users
-php artisan make:migration create_products_table``` # membuat migrasi untuk tabel products <br>
+php artisan make:migration create_products_table``` # membuat migrasi untuk tabel products```
+<br>
 Setelah menjalankan 2 syntax diatas akan terbuat 2 file pada folder
 database/migrations dengan format YYYY_MM_DD_HHmmss_nama_migrasi. Pada
 file migrasi kita akan menemukan fungsi up() dan fungsi down(), fungsi up() akan
