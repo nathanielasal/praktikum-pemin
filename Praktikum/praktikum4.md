@@ -102,7 +102,8 @@ digunakan pada saat kita melakukan migrasi, fungsi down() akan digunakan saat
 kita ingin me-rollback migrasi <br>
 e. Ubah fungsi up pada file migrasi create_users_table <br>
 sebelumnya
-```...
+```
+...
 public function up()
 {
 Schema::create('users', function (Blueprint $table) {
