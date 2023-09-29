@@ -8,20 +8,21 @@ $router->get('/get', function () {
 return 'GET';
 });
 ```
+ ![Screenshot](../Screenshot4/2.png) <br>
+
 <br>
 Setelah itu coba jalankan aplikasi dengan command,<br>
 
 ```
 php -S localhost:8000 -t public
 ```
-
-<br>
-
-
+![Screenshot](../Screenshot4/3.png) <br>
 Setelah aplikasi berhasil dijalankan, kita dapat membuka browser dengan url,
-http://localhost:8000/get , path yang akan kita akses akan berbentuk demikian, <br>
+http://localhost:8000/get , path yang akan kita akses akan berbentuk demikian,
 http://{BASE_URL}{PATH} , jika BASE_URL kita adalah localhost:8000 dan PATH kita
-adalah /get , maka url akan berbentuk seperti diatas. <br>
+adalah /get , maka url akan berbentuk seperti diatas. 
+<br>
+![Screenshot](../Screenshot4/1.png) <br>
 
 2. POST, PUT, PATCH, DELETE, dan OPTIONS
 Sama halnya saat menambahkan method GET, kita dapat menambahkan methode
@@ -46,8 +47,9 @@ $router->options('/options', function () {
 return 'OPTIONS';
 });
 ```
-<br>
 
+![Screenshot](../Screenshot4/4.png) 
+<br>
 Setelah selesai menambahkan route untuk method POST, PUT, PATCH, DELETE, dan
 OPTIONS, kita dapat menjalankan server seperti pada saat percobaan GET. Setelah
 server berhasil menyala, kita dapat membuka aplikasi Postman atau Insomnia atau kita
@@ -57,15 +59,26 @@ extensions pada VSCode yaitu Thunder Client. <br>
 
 a. Kita dapat menginstall ekstensi dengan membuka panel extensions lalu mencari
 thunder client <br>
+![Screenshot](../Screenshot4/5.png) <br>
 b. Setelah menginstall Thunder Client, kita akan melihat logo seperti petir pada
 activity bar kita (sebelah kiri). <br>
+![Screenshot](../Screenshot4/8.png) <br>
 c. Kita dapat membuat request dengan menekan "New Request" pada ekstensi <br>
+![Screenshot](../Screenshot4/7.png) <br>
 d. Setelah itu kita dapat memasukkan method dan url yang dituju <br>
+
 e. Akses url yang baru saja ditambahkan pada aplikasi dengan methodnya <br>
+![Screenshot](../Screenshot4/9.png) <br>
+![Screenshot](../Screenshot4/10.png) <br>
+![Screenshot](../Screenshot4/11.png) <br>
+![Screenshot](../Screenshot4/12.png) <br>
+![Screenshot](../Screenshot4/13.png) <br>
+![Screenshot](../Screenshot4/14.png) <br>
 
 3. Migrasi Database <br>
 a. Sebelum melakukan migrasi database pastikan server database aktif kemudian
 pastikan sudah membuat database dengan nama lumenapi <br>
+
 b. Kemudian ubah konfigurasi database pada file .env menjadi seperti ini <br>
 
 ```
@@ -76,7 +89,8 @@ DB_DATABASE=lumenapi
 DB_USERNAME=root
 DB_PASSWORD=<password masing-masing>
 ```
-<br>
+![Screenshot](../Screenshot4/16.png) <br>
+
 c. Setelah mengubah konfigurasi pada file .env, kita juga perlu menghidupkan
 beberapa library bawaan dari lumen dengan membuka file app.php pada folder
 bootstrap dan mengubah baris ini, <br>
@@ -92,12 +106,15 @@ Menjadi, <br>
 $app->withFacades();
 $app->withEloquent();
 ```
+![Screenshot](../Screenshot4/15.png) <br>
 
 d. Setelah itu jalankan command berikut untuk membuat file migration, <br>
-```php artisan make:migration create_users_table # membuat migrasi untuk tabel users
+```
+php artisan make:migration create_users_table # membuat migrasi untuk tabel users
 php artisan make:migration create_products_table # membuat migrasi untuk tabel products
 ```
-<br>
+![Screenshot](../Screenshot4/19.png) <br>
+
 Setelah menjalankan 2 syntax diatas akan terbuat 2 file pada folder
 database/migrations dengan format YYYY_MM_DD_HHmmss_nama_migrasi. Pada
 file migrasi kita akan menemukan fungsi up() dan fungsi down(), fungsi up() akan
@@ -132,6 +149,7 @@ $table->string('password');
 ...
 ```
 
+![Screenshot](../Screenshot4/18.png) <br>
 f. Ubah fungsi up pada file migrasi create_products_table sebelumnya <br>
 ```
 ...
@@ -163,8 +181,12 @@ $table->text('description');
 ...
 ```
 
+![Screenshot](../Screenshot4/17.png) <br>
+
 g. Kemudian jalankan command, <br>
 
 ```
 php artisan migrate
 ```
+![Screenshot](../Screenshot4/20.png) <br>
+![Screenshot](../Screenshot4/21.png) <br>
