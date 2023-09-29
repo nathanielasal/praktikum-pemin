@@ -66,7 +66,7 @@ activity bar kita (sebelah kiri). <br>
 c. Kita dapat membuat request dengan menekan "New Request" pada ekstensi <br>
 ![Screenshot](../Screenshot4/7.png) <br>
 d. Setelah itu kita dapat memasukkan method dan url yang dituju <br>
-
+![Screenshot](../Screenshot4/22.png) <br>
 e. Akses url yang baru saja ditambahkan pada aplikasi dengan methodnya <br>
 ![Screenshot](../Screenshot4/9.png) <br>
 ![Screenshot](../Screenshot4/10.png) <br>
@@ -78,7 +78,7 @@ e. Akses url yang baru saja ditambahkan pada aplikasi dengan methodnya <br>
 3. Migrasi Database <br>
 a. Sebelum melakukan migrasi database pastikan server database aktif kemudian
 pastikan sudah membuat database dengan nama lumenapi <br>
-
+![Screenshot](../Screenshot4/23.png) <br>
 b. Kemudian ubah konfigurasi database pada file .env menjadi seperti ini <br>
 
 ```
