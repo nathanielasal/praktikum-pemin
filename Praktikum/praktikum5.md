@@ -24,12 +24,14 @@ routes tidak mengharuskan kita untuk memberi variable pada endpoint kita, namun 
 memanggil endpoint, dapat menggunakan parameter variable ataupun tidak, seperti pada
 kode dibawah ini,
 
-```$router->get('/users[/{userId}]', function ($userId = null) {
+```
+$router->get('/users[/{userId}]', function ($userId = null) {
 return $userId === null ? 'Data semua users' : 'Data user dengan id ' . $userId;
 });
 ```
 ![Screenshot](../Screenshot5/3.png) <br>
-![Screenshot](../Screenshot5/7.png) <br>
+![Screenshot](../Screenshot5/7.png) 
+
 #### 2. Aliases Route
 Aliases Route digunakan untuk memberi nama pada route yang telah kita buat, hal ini dapat
 membantu kita, saat kita ingin memanggil route tersebut pada aplikasi kita. Berikut syntax
