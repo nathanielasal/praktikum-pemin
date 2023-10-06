@@ -1,5 +1,5 @@
-## Langkah Percobaan
-1. Dynamic Route
+### Langkah Percobaan
+#### 1. Dynamic Route
 Dynamic route adalah route yang dapat berubah-ubah, contohnya pada saat kita membuka
 suatu halaman web, kadang kita melihat /users/1 atau /users/2 , hal ini yang dinamakan
 dynamic routes. <br>
@@ -10,7 +10,7 @@ $router->get('/user/{id}', function ($id) {
 return 'User Id = ' . $id;
 });
 ```
-
+![Screenshot](../Screenshot5/1.png) <br>
 Saat menambahkan parameter pada routes, kita tidak terbatas pada 1 variable saja, namun
 kita dapat menambahkan sebanyak yang diperlukan seperti kode berikut,
 ```
@@ -18,6 +18,7 @@ $router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentI
 return 'Post ID = ' . $postId . ' Comments ID = ' . $commentId;
 });
 ```
+![Screenshot](../Screenshot5/2.png) <br>
 Pada dynamic routes kita juga bisa menambahkan optional routes, yang mana optional
 routes tidak mengharuskan kita untuk memberi variable pada endpoint kita, namun saat kita
 memanggil endpoint, dapat menggunakan parameter variable ataupun tidak, seperti pada
@@ -27,8 +28,9 @@ kode dibawah ini,
 return $userId === null ? 'Data semua users' : 'Data user dengan id ' . $userId;
 });
 ```
-
-2. Aliases Route
+![Screenshot](../Screenshot5/3.png) <br>
+![Screenshot](../Screenshot5/7.png) <br>
+#### 2. Aliases Route
 Aliases Route digunakan untuk memberi nama pada route yang telah kita buat, hal ini dapat
 membantu kita, saat kita ingin memanggil route tersebut pada aplikasi kita. Berikut syntax
 untuk menambahkan aliases route
@@ -42,8 +44,9 @@ return redirect()->route('route.auth.login');
 }
 });
 ```
+![Screenshot](../Screenshot5/4.png) <br>
 
-3. Group Route
+#### 3. Group Route
 Pada lumen, kita juga dapat memberikan grouping pada routes kita agar lebih mudah pada
 saat penulisan route pada web.php kita. Kita dapat melakukan grouping dengan
 menggunakan syntax berikut,
@@ -59,7 +62,9 @@ return "GET /users";
 Selain dapat mengelompokkan prefix, kita juga dapat mengelompokkan middleware dan
 namespace pada kelompok routes kita. <br>
 
-4. Middleware
+![Screenshot](../Screenshot5/6.png) <br>
+
+#### 4. Middleware
 Middleware adalah penengah antara komunikasi aplikasi dan client. Middleware biasanya
 digunakan untuk membatasi siapa yang dapat berinteraksi dengan aplikasi kita dan
 semacamnya, kita dapat menambahkan middleware dengan menambahkan file pada folder
@@ -90,6 +95,8 @@ return $next($request);
 }
 ```
 
+![Screenshot](../Screenshot5/8.png) <br>
+
 Kemudian, setelah menambahkan filter pada AgeMiddleware , kita harus mendaftarkan
 AgeMiddleware pada aplikasi kita, pada file bootstrap/app.php seperti berikut ini,
 
@@ -107,6 +114,7 @@ AgeMiddleware pada aplikasi kita, pada file bootstrap/app.php seperti berikut in
 83
 84 ...
 ```
+![Screenshot](../Screenshot5/9.png) <br>
 
 Pada baris 65 terdapat comment mengenai proses mendaftarkan suatu middleware dalam
 aplikasi kita. Untuk menambahkan middleware pada aplikasi kita, kita dapat men-
@@ -126,3 +134,4 @@ $router->get('/fail', function () {
 return 'Dibawah umur';
 });
 ```
+![Screenshot](../Screenshot5/10.png) <br>
