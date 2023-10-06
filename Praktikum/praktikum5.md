@@ -10,6 +10,7 @@ $router->get('/user/{id}', function ($id) {
 return 'User Id = ' . $id;
 });
 ```
+
 Saat menambahkan parameter pada routes, kita tidak terbatas pada 1 variable saja, namun
 kita dapat menambahkan sebanyak yang diperlukan seperti kode berikut,
 ```
