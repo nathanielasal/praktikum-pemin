@@ -24,6 +24,8 @@ sebelumnya. Berikut informasi kolom yang harus ada
 </tr>
 </table>
 
+![Screenshot tabel user](../Screenshot6/18.png) 
+
 2. Bersihkan isi User.php yang ada sebelumnya dan isi dengan baris kode berikut
 
 ```
@@ -48,6 +50,7 @@ protected $fillable = [
 protected $hidden = [];
 }
 ```
+![Screenshot model Users](../Screenshot6/1.png)
 
 ### Controller
 1. Buatlah salinan ExampleController.php pada folder app/Http/Controllers dengan
@@ -75,18 +78,26 @@ return 'Hello, from lumen!';
 //
 }
 ```
+![Screenshot membuat HomeController](../Screenshot6/2.png) 
 
 2. Ubah route / pada file routes/web.php menjadi seperti ini
 
-# Sebelum,
+#### Sebelum,
 ```
 $router->get('/', function () use ($router) {
 return $router->app->version();
 });
-# Setelah,
+```
+![Screenshot sblm mengganti route](../Screenshot6/3.png)
+
+#### Setelah,
+```
 $router->get('/', ['uses' => 'HomeController@index']);
 ```
+![Screenshot sesudah mengganti route](../Screenshot6/4.png) 
+
 3. Jalankan aplikasi
+![Screenshot jalankan aplikasi](../Screenshot6/5.png) 
 
 ### Request Handler
 1. Lakukan import library Request dengan menambahkan baris berikut di bagian atas file
@@ -97,6 +108,7 @@ namespace App\Http\Controllers;
 // Import Library Request
 use Illuminate\Http\Request;
 ```
+![Screenshot import library request](../Screenshot6/6.png)
 
 2. Ubah fungsi index menjadi
 
@@ -124,8 +136,10 @@ return 'Hello, from lumen! We got your request from endpoint: ' . $request->path
 //
 }
 ```
+![Screenshot mengganti function index](../Screenshot6/7.png)
 
 3. Jalankan aplikasi
+![Screenshot jalankan aplikasi](../Screenshot6/9.png)
 
 ### Response Handler
 1. Lakukan import library Response dengan menambahkan baris berikut di bagian atas file
@@ -136,6 +150,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response; // import library Response
 ```
+![Screenshot import library response](../Screenshot6/10.png)
 
 2. Buatlah fungsi hello() yang berisi
 
@@ -170,6 +185,7 @@ return (new Response($data, 201))
 }
 }
 ```
+![Screenshot membuat function hello](../Screenshot6/11.png) 
 
 3. Tambahkan route /hello pada file routes/web.php
 
@@ -178,8 +194,10 @@ return (new Response($data, 201))
 $router->get('/', ['uses' => 'HomeController@index']);
 $router->get('/hello', ['uses' => 'HomeController@hello']); // route hello
 ```
+![Screenshot membuat route hello](../Screenshot6/12.png) 
 
 4. Jalankan aplikasi pada route /hello
+![Screenshot jalankan aplikasi](../Screenshot6/13.png) 
 
 ### Penerapan
 1. Lakukan import model User dengan menambahkan baris berikut di bagian atas file
@@ -191,6 +209,7 @@ use App\Models\User; // import model User
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 ```
+![Screenshot import model user](../Screenshot6/14.png) 
 
 2. Tambahkan ketiga fungsi berikut di HomeController.php
 
@@ -251,6 +270,9 @@ return response()->json([
 // Tiga Fungsi
 }
 ```
+![Screenshot menambahkan 3 fungsi](../Screenshot6/15.png)
+![Screenshot menambahkan 3 fungsi](../Screenshot6/16.png)
+ 
 
 3. Tambahkan ketiga route pada file routes/web.php menggunakan group route
 
@@ -264,8 +286,10 @@ $router->post('/new', ['uses' => 'HomeController@createUser']);
 $router->get('/all', ['uses' => 'HomeController@getUsers']);
 });
 ```
+![Screenshot membuat group route untuk user](../Screenshot6/17.png) 
 
 4. Jalankan aplikasi pada route /users/default menggunakan Postman
+![Screenshot users/default](../Screenshot6/19.png) 
 
 5. Jalankan aplikasi pada route /users/new dengan mengisi body sebagai berikut
 <table>
@@ -283,5 +307,7 @@ $router->get('/all', ['uses' => 'HomeController@getUsers']);
 </tr>
 </table>
 
-6. Jalankan aplikasi pada route /users/all
+![Screenshot users/new](../Screenshot6/21.png) 
 
+6. Jalankan aplikasi pada route /users/all
+![Screenshot users/all](../Screenshot6/22.png) 
