@@ -1,3 +1,4 @@
+# Praktikum 6
 ## Langkah Percobaan
 ### Model
 
