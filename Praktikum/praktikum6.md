@@ -96,7 +96,7 @@ $router->get('/', ['uses' => 'HomeController@index']);
 ```
 ![Screenshot sesudah mengganti route](../Screenshot6/4.png) 
 
-3. Jalankan aplikasi
+3. Jalankan aplikasi <br>
 ![Screenshot jalankan aplikasi](../Screenshot6/5.png) 
 
 ### Request Handler
@@ -138,7 +138,7 @@ return 'Hello, from lumen! We got your request from endpoint: ' . $request->path
 ```
 ![Screenshot mengganti function index](../Screenshot6/7.png)
 
-3. Jalankan aplikasi
+3. Jalankan aplikasi <br>
 ![Screenshot jalankan aplikasi](../Screenshot6/9.png)
 
 ### Response Handler
@@ -196,7 +196,7 @@ $router->get('/hello', ['uses' => 'HomeController@hello']); // route hello
 ```
 ![Screenshot membuat route hello](../Screenshot6/12.png) 
 
-4. Jalankan aplikasi pada route /hello
+4. Jalankan aplikasi pada route /hello <br>
 ![Screenshot jalankan aplikasi](../Screenshot6/13.png) 
 
 ### Penerapan
@@ -270,7 +270,7 @@ return response()->json([
 // Tiga Fungsi
 }
 ```
-![Screenshot menambahkan 3 fungsi](../Screenshot6/15.png)
+![Screenshot menambahkan 3 fungsi](../Screenshot6/15.png) <br>
 ![Screenshot menambahkan 3 fungsi](../Screenshot6/16.png)
  
 
@@ -288,7 +288,7 @@ $router->get('/all', ['uses' => 'HomeController@getUsers']);
 ```
 ![Screenshot membuat group route untuk user](../Screenshot6/17.png) 
 
-4. Jalankan aplikasi pada route /users/default menggunakan Postman
+4. Jalankan aplikasi pada route /users/default menggunakan Postman <br>
 ![Screenshot users/default](../Screenshot6/19.png) 
 
 5. Jalankan aplikasi pada route /users/new dengan mengisi body sebagai berikut
@@ -306,8 +306,9 @@ $router->get('/all', ['uses' => 'HomeController@getUsers']);
 <td>mahamatra</td>
 </tr>
 </table>
+<br>
 
 ![Screenshot users/new](../Screenshot6/21.png) 
 
-6. Jalankan aplikasi pada route /users/all
+6. Jalankan aplikasi pada route /users/all <br>
 ![Screenshot users/all](../Screenshot6/22.png) 
