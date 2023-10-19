@@ -2,8 +2,32 @@
 ## Langkah Percobaan
 ### Pembuatan Tabel
 Berikut adalah tabel yang akan digunakan pada percobaan ini
+
+<table>
+<tr>
+<td>post</td> 
+<td>comments </td>
+<td>tags </td>
+<td>post_tag </td>
+</tr>
+<tr>
+<td>id</td> 
+<td>id </td>
+<td>id </td>
+<td>postId </td>
+</tr>
+<tr>
+<td>content (STRING)</td>
+<td>review (STRING)</td>
+<td>name</td>
+<td>tagId</td>
+</tr>
+</table>
+<br>
+
 1. Sebelum membuat migrasi database atau membuat tabel pastikan server database
 aktif kemudian pastikan sudah membuat database dengan nama lumenpost
+![Screenshot](../Screenshot7/1.png)
 
 2. Kemudian ubah konfigurasi database pada file .env menjadi seperti berikut
 ```
@@ -14,6 +38,7 @@ DB_DATABASE=lumenpost
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+![Screenshot](../Screenshot7/2.png)
 
 3. Setelah mengubah konfigurasi pada file .env, kita juga perlu menghidupkan
 beberapa library bawaan dari lumen dengan membuka file app.php pada folder
@@ -27,6 +52,7 @@ menjadi
 $app->withFacades();
 $app->withEloquent();
 ```
+![Screenshot](../Screenshot7/3.png)
 
 4. Setelah itu jalankan command berikut untuk membuat file migration
 ```
@@ -35,6 +61,7 @@ php artisan make:migration create_comments_table
 php artisan make:migration create_tags_table
 php artisan make:migration create_post_tag_table
 ```
+![Screenshot](../Screenshot7/4.png)
 
 5. 5. Ubah fungsi `up()` pada file migrasi `create_posts_table`
 ```
@@ -60,6 +87,8 @@ $table->string('content');
 });
 }
 ```
+![Screenshot](../Screenshot7/8.png)
+
 6. Ubah fungsi `up()` pada file `create_comments_table`
 sebelumnya
 ```
@@ -83,6 +112,7 @@ $table->foreignId('postId')->unsigned();
 });
 }
 ```
+![Screenshot](../Screenshot7/5.png)
 
 7. Ubah fungsi `up()` pada file `create_tags_table`
 sebelumnya
@@ -106,6 +136,7 @@ $table->string('name');
 });
 }
 ```
+![Screenshot](../Screenshot7/6.png)
 
 8. Ubah fungsi `up()` pada file `create_post_tag_table`
 sebelumnya
@@ -131,8 +162,9 @@ $table->foreignId('tagId')->unsigned();
 });
 }
 ```
-
+![Screenshot](../Screenshot7/7.png)
 9. Kemudian jalankan command `php artisan migrate`
+![Screenshot](../Screenshot7/9.png)
 
 ### Pembuatan model
 1. Buatlah file dengan nama Post.php dan isi dengan baris kode berikut
@@ -159,6 +191,7 @@ protected $fillable = [
 protected $hidden = [];
 }
 ```
+![Screenshot](../Screenshot7/10.png)
 
 2. Buatlah file dengan nama Comment.php dan isi dengan baris kode berikut
 
@@ -186,6 +219,7 @@ protected $fillable = [
 protected $hidden = [];
 }
 ```
+![Screenshot](../Screenshot7/11.png)
 
 3. Buatlah file dengan nama Tag.php dan isi dengan baris kode berikut
 ```
@@ -210,6 +244,7 @@ protected $fillable = [
 protected $hidden = [];
 }
 ```
+![Screenshot](../Screenshot7/12.png)
 
 ### Relasi One to Many
 1. Tambahkan fungsi comments() pada file Post.php
@@ -228,6 +263,7 @@ return $this->hasMany(Comment::class, 'postId');
 }
 }
 ```
+![Screenshot](../Screenshot7/13.png)
 
 2. Tambahkan fungsi post() dan atribut postId pada $fillable pada file Comment.php
 ```
@@ -253,6 +289,8 @@ return $this->belongsTo(Post::class, 'postId');
 }
 }
 ```
+![Screenshot](../Screenshot7/14.png)
+
 3. Buatlah file PostController.php dan isilah dengan baris kode berikut
 ```
 <?php
@@ -301,6 +339,8 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot7/15.png)
+
 4. Buatlah file CommentController.php dan isilah dengan baris kode berikut
 ```
 <?php
@@ -335,6 +375,7 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot7/16.png)
 
 5. Tambahkan baris berikut pada routes/web.php
 ```
@@ -348,12 +389,16 @@ $router->group(['prefix' => 'comments'], function () use ($router) {
 $router->post('/', ['uses' => 'CommentController@createComment']);
 });
 ```
+![Screenshot](../Screenshot7/17.png)
 
 6. Buatlah satu post menggunakan Postman
+![Screenshot](../Screenshot7/18.png)
 
 7. Buatlah satu comment menggunakan Postman
+![Screenshot](../Screenshot7/19.png)
 
 8. Tampilkan post menggunakan Postman
+![Screenshot](../Screenshot7/20.png)
 
 ### Relasi Many to many
 1. Tambahkan fungsi tags() pada file Post.php
@@ -370,6 +415,8 @@ return $this->belongsToMany(Tag::class, 'post_tag', 'postId', 'tagId');
 }
 }
 ```
+![Screenshot](../Screenshot7/21.png)
+
 2. Tambahkan fungsi posts() pada file Tag.php
 ```
 <?php
@@ -384,6 +431,8 @@ return $this->belongsToMany(Post::class, 'post_tag', 'tagId', 'postId');
 }
 }
 ```
+![Screenshot](../Screenshot7/22.png)
+
 3. Buatlah file TagController.php dan isilah dengan baris kode berikut
 ```
 <?php
@@ -417,6 +466,8 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot7/23.png)
+
 4. Tambahkan fungsi addTag dan response tags pada PostController.php
 ```
 <?php
@@ -453,6 +504,8 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot7/24.png)
+
 5. Tambahkan baris berikut pada routes/web.php
 ```
 $router->group(['prefix' => 'posts'], function () use ($router) {
@@ -465,12 +518,31 @@ $router->group(['prefix' => 'tags'], function () use ($router) {
 $router->post('/', ['uses' => 'TagController@createTag']);
 });
 ```
+![Screenshot](../Screenshot7/25.png)
+
 6. Buatlah satu tag menggunakan Postman
+![Screenshot](../Screenshot7/26.png)
+
 7. Tambahkan tag “jadul” pada post “disana engkau berdua”
+![Screenshot](../Screenshot7/27.png)
+
 8. Tampilkan post “disana engkau berdua” menggunakan Postman
+![Screenshot](../Screenshot7/28.png)
+
 9. Buatlah postingan “tanpamu apa artinya” menggunakan Postman
+![Screenshot](../Screenshot7/29.png)
+
 10. Tambahkan tag “jadul” pada postingan “tanpamu apa artinya”
+![Screenshot](../Screenshot7/30.png)
+
 11. Buatlah tag “lagu” menggunakan Postman
+![Screenshot](../Screenshot7/31.png)
+
 12. Tambahkan tag “lagu” pada postingan “tanpamu apa artinya”
+![Screenshot](../Screenshot7/32.png)
+
 13. Tampilkan post pertama
+![Screenshot](../Screenshot7/33.png)
+
 14. Tampilkan post kedua
+![Screenshot](../Screenshot7/34.png)
