@@ -23,10 +23,11 @@
 <td>password</td>
 </tr>
 </table>
-<br>
+
 ![Screenshot](../Screenshot8/1.png)
 <br>
-2. Pastikan terdapat model User.php yang digunakan pada bab 󾠲 Model, Controller
+
+2. Pastikan terdapat model User.php yang digunakan pada bab 5 - Model, Controller
 dan Request-Response Handler. Berikut baris kode yang harus ada
 ```
 <?php
@@ -50,6 +51,7 @@ protected $fillable = [
 protected $hidden = [];
 }
 ```
+![Screenshot](../Screenshot8/2.png)
 
 3. Buatlah file AuthController.php dan isilah dengan baris kode berikut
 ```
@@ -90,6 +92,8 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot8/3.png)
+![Screenshot](../Screenshot8/4.png)
 
 4. Tambahkan baris berikut pada routes/web.php
 ```
@@ -99,6 +103,7 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
 $router->post('/register', ['uses'=> 'AuthController@register']);
 });
 ```
+![Screenshot](../Screenshot8/5.png)
 
 5. Jalankan aplikasi pada endpoint /auth/register dengan body berikut
 ```
@@ -108,6 +113,7 @@ $router->post('/register', ['uses'=> 'AuthController@register']);
 "password": "wanderer"
 }
 ```
+![Screenshot](../Screenshot8/6.png)
 
 ## Authentication
 1. Buatlah fungsi login(Request $request) pada file AuthController.php
@@ -147,6 +153,7 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot8/7.png)
 
 2. Tambahkan baris berikut pada routes/web.php
 ```
@@ -157,6 +164,7 @@ $router->post('/register', ['uses'=> 'AuthController@register']);
 $router->post('/login', ['uses'=> 'AuthController@login']); // route login
 });
 ```
+![Screenshot](../Screenshot8/9.png)
 
 3. Jalankan aplikasi pada endpoint /auth/login dengan body berikut
 ```
@@ -165,12 +173,14 @@ $router->post('/login', ['uses'=> 'AuthController@login']); // route login
 "password": "wanderer"
 }
 ```
+![Screenshot](../Screenshot8/10.png)
 
 ## Token
 1. Jalankan perintah berikut untuk membuat migrasi baru
 ```
 php artisan make:migration add_column_token_to_users
 ```
+![Screenshot](../Screenshot8/11.png)
 
 2. Tambahkan baris berikut pada migration yang baru terbuat
 ```
@@ -204,6 +214,7 @@ $table->dropIfExists('token'); //
 }
 }
 ```
+![Screenshot](../Screenshot8/12.png)
 
 3. Tambahkan atribut token di $fillable pada User.php
 ```
@@ -229,6 +240,7 @@ protected $fillable = [
 protected $hidden = [];
 }
 ```
+![Screenshot](../Screenshot8/13.png)
 
 4. Tambahkan baris berikut pada file AuthController.php
 ```
@@ -270,11 +282,14 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot8/17.png)
+![Screenshot](../Screenshot8/18.png)
 
 5. Jalankan perintah di bawah untuk menjalankan migrasi terbaru
 ```
 php artisan migrate
 ```
+![Screenshot](../Screenshot8/15.png)
 
 6. Jalankan aplikasi pada endpoint /auth/login dengan body berikut. Salinlah token yang didapat ke notepad
 ```
@@ -283,3 +298,102 @@ php artisan migrate
 "password": "wanderer"
 }
 ```
+![Screenshot](../Screenshot8/26.png)
+
+## Authorization
+1. Buatlah file Authorization.php pada folder App/Http/Middleware dan isilah dengan
+baris berikut
+```
+<?php
+namespace App\Http\Middleware;
+use App\Models\User;
+use Closure;
+class Authorization
+{
+/**
+* Handle an incoming request.
+*
+* @param \Illuminate\Http\Request $request
+* @param \Closure $next
+* @return mixed
+*/
+public function handle($request, Closure $next)
+{
+$token = $request->header('token') ?? $request->query('token');
+if (!$token) {
+return response()->json([
+'status' => 'Error',
+'message' => 'token not provided',
+],400);
+}
+$user = User::where('token', $token)->first();
+if (!$user) {
+return response()->json([
+'status' => 'Error',
+'message' => 'invalid token',
+],400);
+}
+$request->user = $user;
+return $next($request);
+}
+}
+```
+![Screenshot](../Screenshot8/20.png)
+![Screenshot](../Screenshot8/21.png)
+
+2. Tambahkan middleware yang baru dibuat pada bootstrap/app.php.
+```
+/*
+|--------------------------------------------------------------------------
+| Register Middleware
+|--------------------------------------------------------------------------
+|
+| Next, we will register the middleware with the application. These can
+| be global middleware that run before and after each request into a
+| route or middleware that'll be assigned to some specific routes.
+|
+*/
+// $app->middleware([
+// App\Http\Middleware\ExampleMiddleware::class
+// ]);
+$app->routeMiddleware([
+'auth' => App\Http\Middleware\Authorization::class, //
+]);
+```
+![Screenshot](../Screenshot8/23.png)
+
+3. Buatlah fungsi home() pada HomeController.php
+```
+<?php
+namespace App\Http\Controllers;
+use App\Models\User; // import model User
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+class HomeController extends Controller
+{
+...
+public function home(Request $request)
+{
+$user = $request->user;
+return response()->json([
+'status' => 'Success',
+'message' => 'selamat datang ' . $user->name,
+],200);
+}
+}
+```
+![Screenshot](../Screenshot8/24.png)
+
+4. Tambahkan baris berikut pada routes/web.php
+```
+<?php
+
+$router->get('/', ['uses' => 'HomeController@index']);
+$router->get('/hello', ['uses' => 'HomeController@hello']);
+$router->get('/home', ['middleware' => 'auth','uses' => 'HomeController@home']); //
+```
+![Screenshot](../Screenshot8/25.png)
+
+5. Jalankan aplikasi pada endpoint /home dengan melampirkan nilai token yang
+didapat setelah login pada header
+![Screenshot](../Screenshot8/27.png)
