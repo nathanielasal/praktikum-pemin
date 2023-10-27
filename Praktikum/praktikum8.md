@@ -23,7 +23,9 @@
 <td>password</td>
 </tr>
 </table>
-
+<br>
+![Screenshot](../Screenshot8/1.png)
+<br>
 2. Pastikan terdapat model User.php yang digunakan pada bab 󾠲 Model, Controller
 dan Request-Response Handler. Berikut baris kode yang harus ada
 ```
