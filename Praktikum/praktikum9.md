@@ -32,10 +32,13 @@ $table->string('token')->unique()->nullable();
 ...
 }
 ```
+![Screenshot](../Screenshot9/1.png)
+
 2. Jalankan perintah di bawah untuk memperbaharui migrasi dan menghapus data yang lama
 ```
 php artisan migrate:fresh
 ```
+![Screenshot](../Screenshot9/2.png)
 3. Jalankan aplikasi pada endpoint /auth/register dengan body berikut.
 ```
 {
@@ -44,8 +47,9 @@ php artisan migrate:fresh
 "password": "wanderer"
 }
 ```
+![Screenshot](../Screenshot9/3.png)
 
-JWT Manual
+## JWT Manual
 1. Tambahkan ketiga fungsi berikut pada AuthController.php
 ```
 <?php
@@ -81,6 +85,8 @@ return $jwt;
 }
 }
 ```
+![Screenshot](../Screenshot9/4.png)
+
 2. Lakukan perubahan pada fungsi login
 ```
 <?php
@@ -134,6 +140,8 @@ return response()->json([
 ...
 }
 ```
+![Screenshot](../Screenshot9/5.png)
+
 3. Tambahkan keempat fungsi berikut pada Middleware/Authorization.php
 ```
 <?php
@@ -169,6 +177,8 @@ return hash_equals($expected_signature, $signature);
 }
 }
 ```
+![Screenshot](../Screenshot9/6.png)
+
 4. Lakukan perubahan pada fungsi handle
 ```
 <?php
@@ -243,6 +253,10 @@ return $next($request);
 ...
 }
 ```
+
+![Screenshot](../Screenshot9/7.png)
+![Screenshot](../Screenshot9/8.png)
+
 5. Jalankan aplikasi pada endpoint /auth/login dengan body berikut. Salinlah token yang didapat ke notepad
 ```
 {
@@ -250,14 +264,24 @@ return $next($request);
 "password": "wanderer"
 }
 ```
+![Screenshot](../Screenshot9/9.png)
+
 6. Jalankan aplikasi pada endpoint /home dengan melampirkan nilai token yang didapat setelah login pada header
+![Screenshot](../Screenshot9/10.png)
 
 ## JWT Library
 1. Lakukan generate jwt key secara online menggunakan website Djecrety ― Django Secret Key Generator
 Setelah mendapatkan secret key kita akan memasukkan secret key tersebut pada file .env dengan membuat variable baru
 bernama JWT_SECRET
+![Screenshot](../Screenshot9/11.png)
+![Screenshot](../Screenshot9/12.png)
+
 2. Lakukan instalasi package jwt firebase dengan menggunakan command berikut
+```
 composer require firebase/php-jwt
+```
+![Screenshot](../Screenshot9/13.png)
+
 3. Tambahkan fungsi berikut pada file AuthController
 ```
 <?php
@@ -294,6 +318,8 @@ return JWT::encode($payload, env('JWT_SECRET'), 'HS256');
 ...
 }
 ```
+![Screenshot](../Screenshot9/14.png)
+
 4. Lakukan perubahan pada fungsi login menjadi seperti berikut
 ```
 <?php
@@ -336,6 +362,10 @@ return response()->json([
 }
 }
 ```
+![Screenshot](../Screenshot9/20.png)
+![Screenshot](../Screenshot9/21.png)
+
+
 5. Buatlah file JwtMiddleware.php dan isikan baris code berikut
 ```
 <?php
@@ -376,21 +406,30 @@ return $next($request);
 }
 }
 ```
+![Screenshot](../Screenshot9/15.png)
+
 6. Daftarkan middleware yang telah dibuat pada bootstrap/app.php
 ```
 $app->routeMiddleware([
 'jwt.auth' => App\Http\Middleware\JwtMiddleware::class,
 ]);
 ```
+![Screenshot](../Screenshot9/16.png)
+
 7. Tambahkan baris berikut pada file web.php
 ```
 $router->get('/home', ['middleware' => 'jwt.auth', 'uses' => 'HomeController@home']);
 ```
+![Screenshot](../Screenshot9/19.png)
+
 8. Jalankan aplikasi pada endpoint /auth/login dengan body berikut. Salinlah token yang didapat ke notepad
-````
+```
 {
 "email": "scaramouche@fatui.org",
 "password": "wanderer"
 }
-````
+```
+![Screenshot](../Screenshot9/17.png)
+
 9. Jalankan aplikasi pada endpoint /home dengan melampirkan nilai token yang didapat setelah login pada header
+![Screenshot](../Screenshot9/18.png)
